@@ -4,10 +4,14 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
 const { log } = require('console');
+const cors = require('cors');
+
+
+
 
 const app = express();
 app.use(bodyParser.json());
-
+app.use(cors());
 const pool = new Pool({
   connectionString: 'postgresql://postgres.xtcvavdzqlhpxvxifzqj:SSibi*2005@aws-0-ap-south-1.pooler.supabase.com:6543/postgres',
   ssl: { rejectUnauthorized: false }
